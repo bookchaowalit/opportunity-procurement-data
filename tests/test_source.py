@@ -91,7 +91,7 @@ class SourceTests(unittest.TestCase):
 
     def test_normalize_covers_each_adapter_only_category_with_explicit_markers(self):
         source = resource("source.json")
-        cases = [
+        cases: list[tuple[str, str, str, dict[str, str]]] = [
             ("rfp", "Request for Proposals: digital service", "Open procedure", {}),
             ("rfq", "Request for Quotation: office supplies", "Quotation", {}),
             ("vendor-registration", "Supplier registration portal", "Dynamic purchasing", {}),
